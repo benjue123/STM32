@@ -243,6 +243,7 @@ again:
 		goto again;
 	}
 
+
 	if (so_far == len) return 1;
 	else return -1;
 }
@@ -255,7 +256,7 @@ void Uart_isr (UART_HandleTypeDef *huart)
 	  uint32_t isrflags   = READ_REG(huart->Instance->SR);
 	  uint32_t cr1its     = READ_REG(huart->Instance->CR1);
 
-    /* if DR is not empty and the Rx Int is enabled */
+    /* if DR is not empty and the Rx Interrupt is enabled */
     if (((isrflags & USART_SR_RXNE) != RESET) && ((cr1its & USART_CR1_RXNEIE) != RESET))
     {
     	 /******************
