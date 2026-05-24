@@ -260,7 +260,7 @@ int main(void)
 
   ESP_Init("shieh-2F", "0492393511");
 
-  uint32_t lastTime = HAL_GetTick();;
+  uint32_t lastTime = HAL_GetTick();
 
 
   /* USER CODE END 2 */
@@ -270,77 +270,6 @@ int main(void)
   while (1)
 
   {
-
-//	  if(DHT22_Start())
-//	  	      {
-//	  	        RH1 = DHT22_Read(); // First 8bits of humidity
-//	  	        RH2 = DHT22_Read(); // Second 8bits of Relative humidity
-//	  	        TC1 = DHT22_Read(); // First 8bits of Celsius
-//	  	        TC2 = DHT22_Read(); // Second 8bits of Celsius
-//	  	        SUM = DHT22_Read(); // Check sum
-//	  	        CHECK = RH1 + RH2 + TC1 + TC2;
-//	  	        if (CHECK == SUM)
-//	  	        {
-//	  	          if (TC1>127) // If TC1=10000000, negative temperature
-//	  	          {
-//	  	            tCelsius = (float)TC2/10*(-1);
-//	  	          }
-//	  	          else
-//	  	          {
-//	  	            tCelsius = (float)((TC1<<8)|TC2)/10;
-//	  	          }
-//	  	          tFahrenheit = tCelsius * 9/5 + 32;
-//	  	          RH = (float) ((RH1<<8)|RH2)/10;
-//	  	          RHI = RH;  // Relative humidity integral
-//	  	          RHD = RH*10-RHI*10; // Relative humidity decimal
-//	  	          sprintf(strCopy,"%d.%d %%  ", RHI, RHD);
-//
-//	  	          if (tCelsius < 0)
-//	  	          {
-//	  	            TCI = tCelsius *(-1);  // Celsius integral
-//	  	            TCD = tCelsius*(-10)-TCI*10; // Celsius decimal
-//	  	            sprintf(strCopy,"-%d.%d C   ", TCI, TCD);
-//	  	          }
-//	  	          else
-//	  	          {
-//	  	            TCI = tCelsius;  // Celsius integral
-//	  	            TCD = tCelsius*10-TCI*10; // Celsius decimal
-//	  	            sprintf(strCopy,"%d.%d C   ", TCI, TCD);
-//	  	          }
-//
-//	  	          if(tFahrenheit < 0)
-//	  	          {
-//	  	            TFI = tFahrenheit*(-1);  // Fahrenheit integral
-//	  	            TFD = tFahrenheit*(-10)-TFI*10; // Fahrenheit decimal
-//	  	            sprintf(strCopy,"-%d.%d F   ", TFI, TFD);
-//	  	          }
-//	  	          else
-//	  	          {
-//	  	            TFI = tFahrenheit;  // Fahrenheit integral
-//	  	            TFD = tFahrenheit*10-TFI*10; // Fahrenheit decimal
-//	  	            sprintf(strCopy,"%d.%d F   ", TFI, TFD);
-//	  	          }
-//
-//	  	        }
-//	  	      }
-//
-////	  Humidity = (uint16_t) RH;
-//	  Humidity = RH;
-//
-////	  Temperature = (uint16_t) tCelsius;
-//	  Temperature = tCelsius;
-//    /* USER CODE END WHILE */
-//
-//    /* USER CODE BEGIN 3 */
-////	  Value_Buf[0] =  Humidity;   // for int
-////	  Value_Buf[1] =  Temperature;  // for int
-//
-//	  Value_Buf[0] = ((int)(Humidity * 10 + 0.5)) / 10.0;
-//	  Value_Buf[1] = ((int)(Temperature * 10 + 0.5)) / 10.0;
-//
-//	  ESP_Send_Multi("KHNF01ZVGT9EEOZW", 2, Value_Buf);
-//	  HAL_Delay(10000);
-
 	  if(HAL_GetTick() - lastTime >= 30000)
 	          {
 	              lastTime = HAL_GetTick();
