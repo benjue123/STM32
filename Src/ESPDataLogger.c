@@ -11,7 +11,7 @@
 #include "string.h"
 
 
-void bufclr (char *buf)
+void bufclr (char *buf) // This function use '\0' to erase string， maybe we can use memset() to replace using '\0'
 {
 	int len = strlen (buf);
 	for (int i=0; i<len; i++) buf[i] = '\0';
@@ -33,7 +33,7 @@ void ESP_Init (char *SSID, char *PASSWD)
 	Uart_sendstring("AT\r\n");
 	while(!(Wait_for("OK\r\n")));
 
-	Uart_flush();
+	Uart_flush();  // data in rx buffer do not need, so clear
 
 
 	/********* AT+CWMODE=1 **********/
@@ -90,7 +90,6 @@ void ESP_Send_Multi (char *APIkey, int numberoffileds, float value[])
 {
 	char local_buf[500] = {0};
 	char local_buf2[30] = {0};
-//	char local_buf2[100] = {0};
 	char field_buf[200] = {0};
 
 
